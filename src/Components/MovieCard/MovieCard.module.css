@@ -20,7 +20,7 @@
 }
 .fixCardBody {
   padding: 0px;
-  margin: 12px 0px 0px 0px;
+  margin: 12px auto 0px auto;
   height: 6vh;
   width: 12vw;
   word-break: break-word;
@@ -28,5 +28,8 @@
 @media only screen and (min-width: 200px) and (max-width: 1750px) {
   .cardBody {
     padding: 0px;
+  }
+  .fixCardBody {
+    font-size: 10px;
   }
 }
