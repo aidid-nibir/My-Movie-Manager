@@ -3,6 +3,8 @@ import * as actionTypes from './actions/actions'
 const initialState = {
     loadedMovies: {},
     myMovies: [],
+    favouriteMovies: [],
+    watchLaterList: [],
     error: '',
 }
 

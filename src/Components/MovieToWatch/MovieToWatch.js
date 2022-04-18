@@ -10,33 +10,23 @@ const MovieToWatch = (props) => {
     const moviesFromServer = useSelector((state) => state.loadedMovies)
     const dispatch = useDispatch();
     useEffect(() => {
-        console.log("I am being renderedcghjfghj");
-        // props.onIntiMovies();
         dispatch(actionTypes.getMovies());
-    }, []);
+    }, [dispatch]);
 
     let moviesLoadedFromServer = <Spinner />
     if (moviesFromServer.length > 0) {
         moviesLoadedFromServer = moviesFromServer.map((movie) => {
-            return <Moviecard title={movie.Title} poster={movie.Poster} year={movie.Year} key={movie.imdbID} movieID={movie.imdbID} onClick={(userPreferenceType, title, movieID, year, poster) => props.onStoreMoviesToBucket(userPreferenceType, title, movieID, year, poster)} />
-        })
-    }
-
-    let favouriteMovies;
-    if (props.moviesInBucket.length > 0) {
-        favouriteMovies = props.moviesInBucket.map(storedMovies => {
-            if (storedMovies.userPreference === 0) {
-                return <Moviebucket title={storedMovies.title} poster={storedMovies.poster} key={storedMovies.movieID} />
-            }
-        })
-    }
-
-    let watchLaterMovieList
-    if (props.moviesInBucket.length > 0) {
-        watchLaterMovieList = props.moviesInBucket.map(storedMovies => {
-            if (storedMovies.userPreference === 1) {
-                return <Moviebucket title={storedMovies.title} poster={storedMovies.poster} key={storedMovies.movieID} />
-            }
+            return <Moviecard
+                title={movie.Title}
+                poster={movie.Poster}
+                year={movie.Year}
+                key={movie.imdbID}
+                movieID={movie.imdbID}
+                onClick={
+                    (userPreferenceType, title, movieID, year, poster) => {
+                        props.onStoreMoviesToBucket(userPreferenceType, title, movieID, year, poster)
+                    }
+                } />
         })
     }
 
@@ -47,8 +37,7 @@ const MovieToWatch = (props) => {
                 {moviesLoadedFromServer}
             </div>
             <div className={styles.moviesInBucket}>
-                {favouriteMovies}
-                {watchLaterMovieList}
+                <Moviebucket />
             </div>
         </div>
     )
