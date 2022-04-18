@@ -1,0 +1,36 @@
+/** @format */
+
+.movieList {
+  margin: 5px auto 20px auto;
+  width: 60vw;
+  height: 48vh;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: stretch;
+  border-radius: 10px;
+  overflow-x: scroll;
+  border: 2px solid #a6a6a6;
+  padding: 0px 80px 0px 80px;
+  box-shadow: inset -1px -1px 110px 0px #1a202c;
+}
+.moviesInBucket {
+  margin: auto;
+  width: 69vw;
+  height: 40vh;
+  border-radius: 10px;
+  overflow-y: scroll;
+  border: 2px solid #a6a6a6;
+  box-shadow: inset -1px -1px 110px 0px #1a202c;
+}
+@media only screen and (min-width: 200px) and (max-width: 1750px) {
+  .movieList {
+    height: 60vh;
+  }
+  .moviesInBucket {
+    height: 23vh;
+    width: 70vw;
+  }
+}

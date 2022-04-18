@@ -1,0 +1,44 @@
+/** @format */
+.movieBucketDiv {
+  width: 46%;
+  margin: 1% 2% 0% 1%;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.bucketBody {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 300px 1fr;
+  gap: 1rem;
+  align-items: center;
+  max-width: 800px;
+  margin: 16px auto;
+  border-radius: 15px;
+  box-shadow: inset -5px 5px 40px 15px #a6a6a6;
+}
+.bucketImg {
+  width: 33px;
+  height: auto;
+  border-radius: 5px;
+}
+.bucketP {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: -5em;
+  margin-inline-end: 0px;
+}
+
+@media (max-width: 650px) {
+  .bucketBody {
+    display: block;
+    font-size: 80%;
+  }
+  .bucketP {
+    position: relative;
+    margin: -3rem 0 2rem 1rem;
+    padding: 1rem;
+    background: rgba(white, 0.8);
+  }
+}
