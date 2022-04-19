@@ -1,9 +1,9 @@
 /** @format */
 
 .movieList {
-  margin: 5px auto 20px auto;
-  width: 60vw;
-  height: 48vh;
+  margin: 0px auto 20px auto;
+  width: 75vw;
+  height: 38vh;
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: nowrap;
@@ -18,8 +18,8 @@
 }
 .moviesInBucket {
   margin: auto;
-  width: 69vw;
-  height: 40vh;
+  width: 83vw;
+  height: 48vh;
   border-radius: 10px;
   overflow-y: scroll;
   border: 2px solid #a6a6a6;
@@ -27,10 +27,10 @@
 }
 @media only screen and (min-width: 200px) and (max-width: 1750px) {
   .movieList {
-    height: 60vh;
+    height: 54vh;
   }
   .moviesInBucket {
-    height: 23vh;
-    width: 70vw;
+    height: 30vh;
+    width: 87vw;
   }
 }

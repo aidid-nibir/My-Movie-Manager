@@ -12,25 +12,17 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-
-
         case actionTypes.SET_MOVIES:
             return {
                 // Loading Movies on app start
                 ...state,
                 loadedMovies: action.initiallyLoadedMovies,
             };
-            break;
-
-
         case actionTypes.SET_MOVIES_FAILED:
             return {
                 ...state,
                 error: true
             };
-            break;
-
-
         case actionTypes.ADD_TO_BUCKET:
             console.log('I am In reducer')
             if (action.movie.userPreference === 0) {
@@ -74,26 +66,28 @@ const reducer = (state = initialState, action) => {
                 }
 
             }
-            break;
-
-
         case actionTypes.REMOVE_FROM_FAVOURITE_BUCKET:
-            let newList = state.favouriteMovies.splice(action.movieID, 1);
+            const newfavouriteMovies = [...state.favouriteMovies];
+            const index = newfavouriteMovies.findIndex(obj => obj.movieID === action.movieID);
+            console.log(index);
+            newfavouriteMovies.splice(index, 1, (index - 1))
             return {
                 ...state,
-                favouriteMovies: [newList]
+                favouriteMovies: newfavouriteMovies
             };
-            break
         case actionTypes.REMOVE_FROM_WATCH_LATER_BUCKET:
+            const newWatchLaterList = [...state.watchLaterList];
+            newWatchLaterList.filter(result => result.movieID !== action.movieID)
+            // newWatchLaterList.splice(action.movieID, 1)
             return {
                 ...state,
-                error: true
+                watchLaterList: newWatchLaterList
             };
-            break
         default:
-            break;
+            return {
+                ...state
+            }
     }
-    return state;
 };
 
 export default reducer;

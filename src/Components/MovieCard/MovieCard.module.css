@@ -8,15 +8,15 @@
 .cardBody {
   border: 1px solid #a6a6a6;
   position: relative;
-  margin: 16px auto;
+  margin: 22px 5px 0px 5px;
   text-align: center;
   border-radius: 0px 0px 30px 30px;
   box-shadow: inset -1px -7px 20px 4px #a6a6a6;
 }
 .cardImage {
   width: 100%;
-  height: 5vh;
-  object-fit: cover;
+  height: 16vh;
+  object-fit: scale-down !important;
 }
 .fixCardBody {
   padding: 0px;
@@ -28,12 +28,12 @@
 @media only screen and (min-width: 200px) and (max-width: 1750px) {
   .cardBody {
     padding: 0px;
-    height: 50vh;
+    height: 43vh;
   }
   .fixCardBody {
     font-size: 10px;
   }
   .cardImage {
-    height: 35vh;
+    height: 28vh;
   }
 }

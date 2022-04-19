@@ -10,7 +10,6 @@
   display: grid;
   padding: 10px;
   grid-template-columns: 300px 1fr;
-  gap: 1rem;
   align-items: center;
   max-width: 800px;
   margin: 16px auto;
@@ -41,10 +40,13 @@
 }
 .vl {
   border-left: 8px solid #66666685;
-  height: 40%;
+  height: 48%;
   border-radius: 10px;
   position: absolute;
   left: 49.5%;
+}
+.deleteIcon {
+  margin: -17% 0% 0% 200%;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 1750px) {
@@ -59,9 +61,9 @@
     background: rgba(white, 0.8);
   }
   .vl {
-    height: 23%;
+    height: 30%;
   }
   .deleteIcon {
-    margin: 0% 0% 0% 90%;
+    margin: -6% 0% 0% 90%;
   }
 }
