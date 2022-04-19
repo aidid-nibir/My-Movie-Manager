@@ -67,21 +67,25 @@ const reducer = (state = initialState, action) => {
 
             }
         case actionTypes.REMOVE_FROM_FAVOURITE_BUCKET:
-            const newfavouriteMovies = [...state.favouriteMovies];
-            const index = newfavouriteMovies.findIndex(obj => obj.movieID === action.movieID);
-            console.log(index);
-            newfavouriteMovies.splice(index, 1, (index - 1))
+            // ` !!!!!!!!!!!!!!!!!!!!!!!!!! i need to knwo why this bello code (from line 71 to 78) is working!!!!!!!!!!!!!`
+            // const newfavouriteMovies = [...state.favouriteMovies];
+            // const index = newfavouriteMovies.findIndex(obj => obj.movieID === action.movieID);
+            // console.log(index);
+            // newfavouriteMovies.splice(index, 1, (index - 1))
+            // return {
+            //     ...state,
+            //     favouriteMovies: newfavouriteMovies
+            // };
+            let newfavouriteMovies = state.favouriteMovies.filter(result => result.movieID !== action.movieID)
             return {
                 ...state,
-                favouriteMovies: newfavouriteMovies
+                favouriteMovies: [...newfavouriteMovies]
             };
         case actionTypes.REMOVE_FROM_WATCH_LATER_BUCKET:
-            const newWatchLaterList = [...state.watchLaterList];
-            newWatchLaterList.filter(result => result.movieID !== action.movieID)
-            // newWatchLaterList.splice(action.movieID, 1)
+            let newWatchLaterList = state.watchLaterList.filter(result => result.movieID !== action.movieID)
             return {
                 ...state,
-                watchLaterList: newWatchLaterList
+                watchLaterList: [...newWatchLaterList]
             };
         default:
             return {
