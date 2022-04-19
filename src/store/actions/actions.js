@@ -4,7 +4,8 @@ export const ADD_TO_BUCKET = "ADD_TO_BUCKET";
 export const ADD_TO_FAVOURITE_BUCKET = "ADD_TO_FAVOURITE_BUCKET";
 export const ADD_TO_WATCH_LATER_BUCKET = "ADD_TO_WATCH_LATER_BUCKET";
 export const SET_MOVIES_FAILED = "SET_MOVIES_FAILED";
-export const REMOVE_FROM_BUCKET = "REMOVE_FROM_BUCKET";
+export const REMOVE_FROM_FAVOURITE_BUCKET = "REMOVE_FROM_FAVOURITE_BUCKET";
+export const REMOVE_FROM_WATCH_LATER_BUCKET = "REMOVE_FROM_WATCH_LATER_BUCKET";
 
 export const setMovies = (movies) => {
     return {
@@ -39,11 +40,15 @@ export const addToBucket = (movie) => {
 
 }
 
-// export const removeFromBucket = (userPreference, movieID) => {
-//     return {
-//         type: 'ADD_TO_BUCKET',
-//         userPreference: userPreferenceType,
-//         movieID: movieID
-//     }
-
-// }
+export const removeFromFavouriteBucket = (movieID) => {
+    return {
+        type: 'REMOVE_FROM_FAVOURITE_BUCKET',
+        movieID: movieID
+    }
+}
+export const removeFromWatchLaterBucket = (movieID) => {
+    return {
+        type: 'REMOVE_FROM_WATCH_LATER_BUCKET',
+        movieID: movieID
+    }
+}

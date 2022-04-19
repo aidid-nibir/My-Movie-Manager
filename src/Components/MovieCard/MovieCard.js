@@ -12,7 +12,7 @@ const MovieCard = ({ title, movieID, year, poster, onClick }) => {
             <div className={styles.container}>
 
                 <div className={styles.cardBody}>
-                    <CardMedia
+                    <CardMedia className={styles.cardImage}
                         component="img"
                         height="250px"
                         image={poster}

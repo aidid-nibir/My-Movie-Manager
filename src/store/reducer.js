@@ -77,7 +77,14 @@ const reducer = (state = initialState, action) => {
             break;
 
 
-        case actionTypes.REMOVE_FROM_BUCKET:
+        case actionTypes.REMOVE_FROM_FAVOURITE_BUCKET:
+            let newList = state.favouriteMovies.splice(action.movieID, 1);
+            return {
+                ...state,
+                favouriteMovies: [newList]
+            };
+            break
+        case actionTypes.REMOVE_FROM_WATCH_LATER_BUCKET:
             return {
                 ...state,
                 error: true

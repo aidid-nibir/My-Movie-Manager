@@ -54,11 +54,14 @@
   }
   .bucketP {
     position: relative;
-    margin: -3rem 0 2rem 1rem;
-    padding: 1rem;
+    margin: -45px 0px -1px 65px;
+    padding: 5px 0px 0px 15px;
     background: rgba(white, 0.8);
   }
   .vl {
-  height: 23%;
+    height: 23%;
+  }
+  .deleteIcon {
+    margin: 0% 0% 0% 90%;
   }
 }

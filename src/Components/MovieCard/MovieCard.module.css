@@ -28,8 +28,12 @@
 @media only screen and (min-width: 200px) and (max-width: 1750px) {
   .cardBody {
     padding: 0px;
+    height: 50vh;
   }
   .fixCardBody {
     font-size: 10px;
+  }
+  .cardImage {
+    height: 35vh;
   }
 }
